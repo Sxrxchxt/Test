@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="Home.css">
+  <title>Document</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px; /* ช่องว่างระหว่างภาพ */
+      justify-content: center; /* จัดกลาง */
+    }
+    img {
+      border: 2px solid #ccc; /* ขอบภาพ */
+      border-radius: 8px; /* มุมโค้ง */
+      max-width: 100%; /* ทำให้ภาพปรับขนาดได้ */
+      height: auto; /* ปรับความสูงอัตโนมัติ */
+    }
+    
+  </style>
+</head>
+<body>
+  <header id="header">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="index.html">หน้าหลัก</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="Record.html"><h4>ประวัติ</h4></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="picture.html"><h4>รูปภาพ</h4></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="favourite.html"><h4>สิ่งที่ชอบ</h4></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Contact.html"><h4>ติดต่อ</h4></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+<br>
+<br>
+  <div class="content">
+    <h2 class="text-center">รูปทั้งหมด</h2>
+    <div class="image-gallery">
+      <img src="https://img2.pic.in.th/pic/10381d5bec65bd90c.jpg" alt="กิจกรรม 1" class="hidden" height="175" width="175">
+      <img src="https://img5.pic.in.th/file/secure-sv1/26736b97900013e15.jpg" alt="กิจกรรม 2" class="hidden" height="175" width="175">
+      <img src="https://img2.pic.in.th/pic/bb5892ab10b436777f921c26242f5b70.md.jpg" alt="รูปตอนเด็ก" class="hidden" height="175" width="175">
+      <img src="https://img5.pic.in.th/file/secure-sv1/2a370ba55902ea1e6c9217eb0a4d7516.md.jpg" alt="ห้องสมุด" class="hidden" height="175" width="175">
+    </div>
+  </div>
+
+  <script>
+    window.onload = function() {
+      const images = document.querySelectorAll('.hidden');
+      let index = 0;
+
+      function showImage() {
+        if (index < images.length) {
+          images[index].classList.remove('hidden');
+          index++;
+          setTimeout(showImage, 200); // รอ 100 มิลลิวินาทีก่อนแสดงภาพถัดไป
+        }
+      }
+
+      showImage();
+    };
+  </script>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

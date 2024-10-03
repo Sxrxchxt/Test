@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="Home.css">
+  <title>Document</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+
+    .content_PT {
+      width: 20px;
+      height: auto;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="index.html">หน้าหลัก</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="Record.html"><h4>ประวัติ</h4></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="picture.html"><h4>รูปภาพ</h4></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="favourite.html"><h4>สิ่งที่ชอบ</h4></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Contact.html"><h4>ติดต่อ</h4></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <div class="content">
+      <div id="textContent">
+        <strong class="hidden">ข้อมูลติดต่อสอบถาม</strong>
+        <ul class="list-unstyled">
+          <li class="hidden">
+            <img src="https://img5.pic.in.th/file/secure-sv1/Line9af8e51e14a7dab3.jpg" class="content_PT">Line: KFC_6551
+          </li>
+          <li class="hidden">
+            <img src="https://img2.pic.in.th/pic/FB.md.webp" class="content_PT">FB: Sarachat Buasri
+          </li>
+          <li class="hidden">
+            <img src="https://img5.pic.in.th/file/secure-sv1/IG.md.webp" class="content_PT">IG: Sxrxchxt__19
+          </li>
+          <li class="hidden">
+            <img src="https://img2.pic.in.th/pic/PH.md.webp" class="content_PT">Phone: 0638474216
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    window.onload = function() {
+      const content = document.querySelectorAll('.hidden');
+      let index = 0;
+
+      function showText() {
+        if (index < content.length) {
+          content[index].classList.remove('hidden');
+          index++;
+          setTimeout(showText, 200); // รอ 500 มิลลิวินาทีก่อนแสดงตัวถัดไป
+        }
+      }
+
+      showText();
+    };
+  </script>
+</body>
+</html>
